@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Bookmark, BookmarkCheck, Check, Copy, RefreshCw, Trash2 } from 'lucide-react';
 import { AnalysisPanel } from './components/AnalysisPanel';
+import { ContactSection } from './components/ContactSection';
 import { LottoBall } from './components/LottoBall';
 import { NumberSelectorBoard } from './components/NumberSelectorBoard';
 import { WinningCheckerSection } from './components/WinningCheckerSection';
@@ -197,6 +198,12 @@ export default function App() {
               className="hover:text-slate-900 transition-colors whitespace-nowrap shrink-0"
             >
               내 번호함
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-slate-900 transition-colors whitespace-nowrap shrink-0"
+            >
+              문의하기
             </a>
           </nav>
 
@@ -552,13 +559,24 @@ export default function App() {
         </div>
 
         <WinningCheckerSection currentSlip={currentSlip} savedGames={savedGames} />
+
+        <ContactSection />
       </main>
 
       <footer className="border-t border-slate-200 bg-white mt-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-slate-500">
-          <p>
-            로또 6/45는 매 회차 독립 시행으로 추첨되며, 본 서비스의 추천 번호와 통계 지표는 참고용입니다.
-          </p>
+          <div className="space-y-1">
+            <p>
+              로또 6/45는 매 회차 독립 시행으로 추첨되며, 본 서비스의 추천 번호와 통계 지표는 참고용입니다.
+            </p>
+            <p>
+              서비스 문의 사항이나 개선 의견은{' '}
+              <a href="#contact" className="font-medium text-slate-700 underline underline-offset-2 hover:text-slate-900">
+                고객 문의 폼
+              </a>
+              을 통해 언제든 보내주세요.
+            </p>
+          </div>
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <span className="inline-flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-[#FBC400]" aria-hidden="true" />
